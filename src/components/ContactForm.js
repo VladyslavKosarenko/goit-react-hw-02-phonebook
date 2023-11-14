@@ -1,3 +1,5 @@
+import { ContactInput } from './ContactInput';
+
 export const ContactForm = ({
   name,
   number,
@@ -7,26 +9,26 @@ export const ContactForm = ({
 }) => {
   return (
     <form onSubmit={onSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={onNameChange}
-          required
-        />
-      </label>
-      <label>
-        Phone:
-        <input
-          type="tel"
-          name="number"
-          value={number}
-          onChange={onNumberChange}
-          required
-        />
-      </label>
+      <div>
+        <label>
+          Name:
+          <ContactInput
+            type="text"
+            value={name}
+            onChange={onNameChange}
+            required
+          />
+        </label>
+        <label>
+          Phone:
+          <ContactInput
+            type="tel"
+            value={number}
+            onChange={onNumberChange}
+            required
+          />
+        </label>
+      </div>
       <button type="submit">Add contact</button>
     </form>
   );
